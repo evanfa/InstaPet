@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/actionBar"
+    android:layout_height="40dp"
+    android:layout_width="match_parent">
+
+    <item android:title="Refresh"
+        android:id="@+id/action_refresh"
+        android:showAsAction="ifRoom" />
+        <!--android:icon="@drawable"-->
+    <item
+        android:id="@+id/action_network"
+        android:title="Network Setting"
+        android:showAsAction="never"
+        >
+    </item>
+</menu>
