@@ -15,11 +15,7 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     private RecyclerView listOfItems;
-    int counterVotes = 0;
     ArrayList<Pet> arrayItem;
-
-    TextView txtVVote = (TextView) findViewById(R.id.tvCalif);
-
 
    @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void startAdapater(){
-        ItemAdapter adAdapter = new ItemAdapter(arrayItem, this/*, txtVVote*/);
+        ItemAdapter adAdapter = new ItemAdapter(arrayItem, this);
         listOfItems.setAdapter(adAdapter);
     }
 

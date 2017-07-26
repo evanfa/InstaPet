@@ -23,13 +23,11 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
 
     ArrayList<Pet> items;
     Activity activity;
-    //TextView voteValue;
+    int valueVoto = 0;
 
-
-    public ItemAdapter(ArrayList<Pet> items, Activity activity/*, TextView voteValue*/){
+    public ItemAdapter(ArrayList<Pet> items, Activity activity){
         this.items = items;
         this.activity = activity;
-        //this.voteValue = voteValue;
     }
 
     @Override
@@ -45,6 +43,8 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
         //System.out.println("Holder: "+holder.votosPet+" Position: "+position);
 
         final Pet item = items.get(position);
+
+        valueVoto =  Integer.parseInt(String.valueOf(item.getValuePet()));
 
         holder.namePet.setText(String.valueOf(item.getNamePet()));
         holder.votosPet.setText(String.valueOf(item.getValuePet()));
@@ -66,28 +66,9 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
         holder.btnVote.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-
-               // item.votosPet.setText(String.valueOf(item.getValuePet()));
-                //item.setValuePet(Integer.valueOf(item.getValuePet()+1));
-
-                //int txV = (int) R.id.tvCalif;
-
-                  //      txV.setText(item.getValuePet()+1);
-
-
-               // voteValue.setText(item.getValuePet()+1);
-
-                //item.setValuePet(item.getValuePet()+1);
-                //System.out.println("PetNAme: "+item.getNamePet()+" Total Votes: "+ item.getValuePet()+1);
-                //Toast.makeText(activity,"Test: "+item.getValuePet(), Toast.LENGTH_SHORT).show();
-                //item.setValuePet(item.getValuePet()+1);
-                //TextView txV= (TextView) v.findViewById(R.id.tvCalif);
-                //txV.setText(String.valueOf(item.getValuePet()+1));
-                //System.out.print("--------------------->"+txV.getId());
-                //ItemViewHolder itmVH = new ItemViewHolder(v);
-                //itmVH.votosPet.setText(String.valueOf(item.getValuePet()+1));
-               // item.setValuePet(item.getValuePet());
-
+                valueVoto++;
+                System.out.println("Value Voto: "+valueVoto);
+                holder.votosPet.setText(String.valueOf(valueVoto));
             }
         });
 
