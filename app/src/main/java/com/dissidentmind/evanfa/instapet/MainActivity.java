@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
@@ -21,6 +22,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+       /**
+        * App Bar Declaration
+        */
+       Toolbar miActionBar = (Toolbar) findViewById(R.id.miActionBar);
+       setSupportActionBar(miActionBar);
 
        listOfItems = (RecyclerView) findViewById(R.id.rvItems);
        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
@@ -39,6 +45,11 @@ public class MainActivity extends AppCompatActivity {
         arrayItem.add(new Pet("Paty", 0,R.drawable.doggy3));
         arrayItem.add(new Pet("Birolo", 0,R.drawable.doggy4));
         arrayItem.add(new Pet("Tabata", 0,R.drawable.doggy5));
+        arrayItem.add(new Pet("Chihuas", 0,R.drawable.doggy6));
+        arrayItem.add(new Pet("Guapo", 0,R.drawable.doggy7));
+        arrayItem.add(new Pet("Sadi", 0,R.drawable.doggy8));
+        arrayItem.add(new Pet("Tepino", 0,R.drawable.doggy9));
+        arrayItem.add(new Pet("Poncho", 0,R.drawable.doggy10));
     }
 
     public void startAdapater(){

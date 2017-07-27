@@ -23,4 +23,7 @@
     <dimen name="barSize36">36dp</dimen>
     <dimen name="barSize50">50dp</dimen>
     <dimen name="headerBarSize">260dp</dimen>
+    <dimen name="elevationBar">4dp</dimen>
+    <dimen name="layoutFooterImage">70dp</dimen>
+    <dimen name="starSize">50dp</dimen>
 </resources>

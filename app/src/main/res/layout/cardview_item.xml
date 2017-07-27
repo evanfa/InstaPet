@@ -29,18 +29,19 @@
             android:layout_height="32dp"
             android:background="@drawable/dogbone_w"
             android:layout_marginTop="@dimen/paddingGeneral"
-            android:layout_marginRight="@dimen/paddingGeneral"/>
+            android:layout_marginRight="@dimen/paddingGeneral"
+            android:layout_weight="0"/>
 
         <TextView
             android:id="@+id/tvName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/padding_h"
+            android:layout_weight="70"
             android:text="@string/lbl_name"
             android:textColor="@color/textSecondary"
             android:textSize="@dimen/name_cardview"
-            android:textStyle="bold"
-            android:layout_weight="70"
-            android:layout_marginTop="@dimen/padding_h"/>
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/tvCalif"
@@ -51,16 +52,17 @@
             android:textSize="@dimen/name_cardview"
             android:layout_weight="10"
             android:layout_marginTop="@dimen/padding_h"
+            android:textAlignment="center"
             />
 
         <ImageButton
             android:id="@+id/imageButton"
             android:layout_width="20dp"
             android:layout_height="32dp"
-            android:layout_weight="10"
-            android:background="@drawable/dogbone_g"
+            android:layout_marginRight="@dimen/paddingGeneral"
             android:layout_marginTop="@dimen/paddingGeneral"
-            android:layout_marginRight="@dimen/paddingGeneral"/>
+            android:layout_weight="10"
+            android:background="@drawable/dogbone_g" />
         <!--   <android.support.v7.widget.AppCompatImageView
                android:id="@+id/imgFoto"
                android:layout_width="match_parent"

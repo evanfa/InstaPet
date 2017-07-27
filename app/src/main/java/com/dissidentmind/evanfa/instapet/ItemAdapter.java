@@ -44,8 +44,6 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
 
         final Pet item = items.get(position);
 
-        valueVoto =  Integer.parseInt(String.valueOf(item.getValuePet()));
-
         holder.namePet.setText(String.valueOf(item.getNamePet()));
         holder.votosPet.setText(String.valueOf(item.getValuePet()));
         holder.fotoPet.setImageResource(item.getFotoPet());
@@ -53,19 +51,27 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
         holder.fotoPet.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                Toast.makeText(activity, item.getNamePet(), Toast.LENGTH_SHORT).show();
+               Toast.makeText(activity, item.getNamePet(), Toast.LENGTH_SHORT).show();
+               //Intent intent = new Intent(activity, FiveStarsPets.class);
                 Intent intent = new Intent(activity, FiveStarsPets.class);
+
+                System.out.println("Start Activity --- ");
+               // Intent intent = new Intent(activity, FavoritePets.class);
 
                 intent.putExtra("petname",item.getNamePet());
                 intent.putExtra("petcalif", item.getValuePet());
                 intent.putExtra("petpic", item.getFotoPet());
                 activity.startActivity(intent);
+                System.out.println("Sending Extras Activity --- ");
+
             }
         });
 
         holder.btnVote.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
+
+                valueVoto =  Integer.parseInt(String.valueOf(item.getValuePet()));
                 valueVoto++;
                 System.out.println("Value Voto: "+valueVoto);
                 holder.votosPet.setText(String.valueOf(valueVoto));
