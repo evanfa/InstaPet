@@ -19,11 +19,4 @@
         android:textStyle="bold"
         android:layout_weight="80"
         />
- <!--
-    <android.support.v7.view.menu.ActionMenuItemView
-        android:layout_width="@dimen/starSize"
-        android:layout_height="@dimen/starSize"
-        android:id="@+id/btnStar"
-        android:background="@drawable/star5"
-        />-->
 </android.support.v7.widget.Toolbar>
