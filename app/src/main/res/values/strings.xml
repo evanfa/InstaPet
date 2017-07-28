@@ -5,4 +5,7 @@
     <string name="lbl_desc">Description</string>
     <string name="lbl_value">0</string>
     <string name="vertical_ellipsis">&#8942;</string>
+    <string name="menu_about">About</string>
+    <string name="menu_settings">Settings</string>
+
 </resources>

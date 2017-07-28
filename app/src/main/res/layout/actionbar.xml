@@ -10,7 +10,7 @@
     app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Petagram"
         android:textAlignment="center"
@@ -18,5 +18,20 @@
         android:textSize="@dimen/titleName26"
         android:textStyle="bold"
         android:layout_weight="80"
+        android:gravity="center"
         />
+
+    <ImageButton
+        android:layout_width="@dimen/barSize50"
+        android:layout_height="@dimen/barSize50"
+        android:id="@+id/btnStar"
+        android:gravity="right"
+        android:orderInCategory="102"
+        app:showAsAction="always"
+        android:background="@drawable/star5"
+        android:layout_weight="20"
+        android:paddingLeft="@dimen/barSize30"
+        android:layout_gravity="right"
+        />
+
 </android.support.v7.widget.Toolbar>

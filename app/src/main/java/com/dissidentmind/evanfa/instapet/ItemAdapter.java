@@ -9,9 +9,6 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
@@ -40,8 +37,6 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
     @Override
     public void onBindViewHolder(final ItemViewHolder holder, int position) { //Associate each element from the list to each view
 
-        //System.out.println("Holder: "+holder.votosPet+" Position: "+position);
-
         final Pet item = items.get(position);
 
         holder.namePet.setText(String.valueOf(item.getNamePet()));
@@ -51,19 +46,13 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
         holder.fotoPet.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-               Toast.makeText(activity, item.getNamePet(), Toast.LENGTH_SHORT).show();
-               //Intent intent = new Intent(activity, FiveStarsPets.class);
+
+                /*Toast.makeText(activity, item.getNamePet(), Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(activity, FiveStarsPets.class);
-
-                System.out.println("Start Activity --- ");
-               // Intent intent = new Intent(activity, FavoritePets.class);
-
                 intent.putExtra("petname",item.getNamePet());
                 intent.putExtra("petcalif", item.getValuePet());
                 intent.putExtra("petpic", item.getFotoPet());
-                activity.startActivity(intent);
-                System.out.println("Sending Extras Activity --- ");
-
+                activity.startActivity(intent);*/
             }
         });
 
@@ -79,8 +68,6 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
         });
 
     }
-
-    //private void updateCounter(Pet)
 
     @Override
     public int getItemCount() { //List Size
@@ -99,6 +86,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
         private TextView namePet;
         private TextView votosPet;
         private ImageButton btnVote;
+        //private Button btnStar;
 
         public ItemViewHolder(View itemView) {
             super(itemView);
@@ -107,6 +95,8 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
             namePet = (TextView) itemView.findViewById(R.id.tvName);
             votosPet = (TextView) itemView.findViewById(R.id.tvCalif);
             btnVote = (ImageButton) itemView.findViewById(R.id.btnVote);
+
+            //btnStar = (Button) itemView.findViewById(R.id.btnStar);
         }
     }
 }

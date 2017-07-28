@@ -1,5 +1,7 @@
 package com.dissidentmind.evanfa.instapet;
 
+import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -7,10 +9,14 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -22,11 +28,35 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+       final ImageButton btns = (ImageButton) findViewById(R.id.btnStar);
+       //ImageButton btnS = (ImageButton) miActionBar.findViewById(R.id.btnStar);
        /**
         * App Bar Declaration
         */
        Toolbar miActionBar = (Toolbar) findViewById(R.id.miActionBar);
        setSupportActionBar(miActionBar);
+       getSupportActionBar().setDisplayShowTitleEnabled(false);
+
+       btns.setOnClickListener(new View.OnClickListener(){
+           @Override
+           public void onClick(View v) {
+                //System.out.println("Test Icon!!!!!");
+               //Intent intent = new Intent(MainActivity.this, FiveStarsPets.class);
+               //intent.putExtra("petname",item.getNamePet());
+               //intent.putExtra("petcalif", item.getValuePet());
+               //intent.putExtra("petpic", item.getFotoPet());
+               //startActivity(intent);
+
+               //final ArrayList<String> arrayFields = getFieldsValues();
+               Intent intent = new Intent(MainActivity.this, FiveStarsPets.class);
+               final ArrayList<String> arrayFields = getFieldsValues();
+               intent.putExtra("valueStr",arrayFields);
+               startActivity(intent);
+               //finish();
+
+           }
+       });
 
        listOfItems = (RecyclerView) findViewById(R.id.rvItems);
        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
@@ -50,6 +80,21 @@ public class MainActivity extends AppCompatActivity {
         arrayItem.add(new Pet("Sadi", 0,R.drawable.doggy8));
         arrayItem.add(new Pet("Tepino", 0,R.drawable.doggy9));
         arrayItem.add(new Pet("Poncho", 0,R.drawable.doggy10));
+    }
+
+    protected ArrayList getFieldsValues() {
+        final ArrayList<String> arr = new ArrayList<String>();
+
+        TextView txtName = (TextView) findViewById(R.id.tvName); //inN
+        TextView txtCalif = (TextView) findViewById(R.id.tvCalif);
+
+        String txtCleanName = txtName.getText().toString();
+        String txtCleanCalif = txtCalif.getText().toString();
+
+        arr.add(txtCleanName);
+        arr.add(txtCleanCalif);
+
+        return arr;
     }
 
     public void startAdapater(){
