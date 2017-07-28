@@ -3,6 +3,8 @@ package com.dissidentmind.evanfa.instapet;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.ActionMenuView;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.widget.TextView;
 
@@ -10,10 +12,13 @@ import java.util.ArrayList;
 
 public class FiveStarsPets extends AppCompatActivity {
     //private RecyclerView listItemsSecond;
-    //ArrayList<Pet> arrayItemSecond;
+    //ArrayList<Pet> arrayItemsStarsSecond;
 
     private Toolbar starBar;
     private ActionMenuView amvMenuView;
+
+    private RecyclerView listItemsStar;
+    ArrayList<Pet> arrayItemsStars;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,16 +44,41 @@ public class FiveStarsPets extends AppCompatActivity {
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+
+        listItemsStar = (RecyclerView) findViewById(R.id.rvItemsStars);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        listItemsStar.setLayoutManager(layoutManager);
+
+        startItems();
+        startAdapater();
+
         /**
          * Start - Getting Values from Intent
          */
-        Bundle params = getIntent().getExtras();
+        //Bundle params = getIntent().getExtras();
 
-        if(params.size()!=0){
-            System.out.println("Test Non Empty Params");
-        }
+        //if(params.size()!=0){
+        //    System.out.println("Test Non Empty Params");
+        //}
         /**
          * End Getting values intent
          */
+    }
+
+    public void startItems(){
+        arrayItemsStars = new ArrayList<Pet>();
+        
+        arrayItemsStars.add(new Pet("Chihuas", 0,R.drawable.doggy6));
+        arrayItemsStars.add(new Pet("Guapo", 0,R.drawable.doggy7));
+        arrayItemsStars.add(new Pet("Sadi", 0,R.drawable.doggy8));
+        arrayItemsStars.add(new Pet("Tepino", 0,R.drawable.doggy9));
+        arrayItemsStars.add(new Pet("Poncho", 0,R.drawable.doggy10));
+    }
+
+
+    public void startAdapater(){
+        ItemAdapter adAdapter = new ItemAdapter(arrayItemsStars, this);
+        listItemsStar.setAdapter(adAdapter);
     }
 }
