@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.Toolbar
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/tToolBar"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    android:background="@color/colorPrimary"
+    android:elevation="@dimen/actionBarSize"
+    android:gravity="top|start"
+    android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+    app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+    <android.support.v7.widget.ActionMenuView
+        android:id="@+id/actionMenuView"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_width="wrap_content"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Petagram"
+        android:textAlignment="center"
+        android:textColor="@color/textPrimary"
+        android:textSize="@dimen/titleName26"
+        android:textStyle="bold"
+        android:layout_weight="50"
+        android:gravity="left"
+        />
+<!--
+    <Button
+        android:layout_width="@dimen/barSize50"
+        android:layout_height="@dimen/barSize50"
+        android:id="@+id/btnStar"
+        android:gravity="right"
+        android:orderInCategory="102"
+        app:showAsAction="always"
+        android:background="@drawable/star5"
+        android:layout_weight="20"
+        />
+-->
+</android.support.v7.widget.Toolbar>
